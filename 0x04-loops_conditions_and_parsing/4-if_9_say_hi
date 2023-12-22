@@ -3,9 +3,9 @@
 #+ displays best School and then Hi on a new line.
 
 i=0
-while [ $i -le 9 ]; do
+while [ $i -le 10 ]; do
 	echo "best School"
-	if [ $i -eq 8 ]; then
+	if [ $i -eq 9 ]; then
 		echo "Hi";
 	fi
 	let "i++";

@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-# script that displays Holberton School 10 times using until loop
-
+# script that displays best School 10 times using until loop.
 i=0
-until [ $i -gt 9 ]; do
-	echo "best School"
-	let "i++"
+
+until [ $i -eq 10 ]
+do
+  echo "Best School"
+  (( i++ ))
 done
+
+
