@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # install ngix, setup it up on port 80 HTTP and write Holberton School in index file
-apt-get -y update
-apt-get -y install nginx
-ufw allow 'Nginx HTTP'
+sudo apt-get update
+sudo apt-get install -y nginx
 # code to redirect a specific endpoint (eg: redirect /redirect_me to https://blog.ehoneahobed.com)
 echo "Hello World!" | sudo tee /var/www/html/index.html
 string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.blog.ehoneahobed.com permanent;"
