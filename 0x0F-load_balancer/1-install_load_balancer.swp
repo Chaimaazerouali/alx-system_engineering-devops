@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# install haproxy as load balancer for two servers
+apt-get -y update
+add-apt-repository -y ppa:vbernat/haproxy-1.6
+apt-get -y install haproxy=1.6.*
+echo -e "\nlisten www
+    bind :80
+    balance roundrobin
+    server 463556-web-01 54.210.47.110 check
+    server 463556-web-02 54.210.47.111 check" >> /etc/haproxy/haproxy.cfg
+service haproxy restart
