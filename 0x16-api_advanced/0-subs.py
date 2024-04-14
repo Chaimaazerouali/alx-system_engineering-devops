@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-""" How many subs? """
+"""
+Query Reddit API to determine subreddit sub count.
+"""
+
 import requests
 
 
 def number_of_subscribers(subreddit):
-""" Returns subscriber count of subreddit or 0 """
-user_agent = 'Mozilla/5.0'
-url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {"User-Agent": user_agent}
+    """Returns subscriber count of subreddit or 0"""
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    headers = {"User-Agent": "Mozilla/5.0"}
     response = requests.get(url, headers=headers, allow_redirects=False)
-     response = requests.get(url, headers=headers, allow_redirects=False)
     if response.status_code == 200:
         data = response.json()
         subscribers = data['data']['subscribers']
